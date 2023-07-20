@@ -16,7 +16,7 @@ export default function InputSearch({ value, onChange }: InputSearchProps) {
       >
         
       </input>
-      <img src="src/assets/search.svg" alt="" className="input-image"/>
+      <img src="/assets/search.svg" alt="" className="input-image"/>
     </div>
   );
 }

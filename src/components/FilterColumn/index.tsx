@@ -34,7 +34,7 @@ export default function FilterColumn({products, selectedCategories, handleCatego
     <aside className="filters">
       <header onClick={toggleFilter} className='filter-header'>
         Filtrar por Categoria:
-        <img src="src/assets/down-arrow.svg" alt="" className={`down-arrow ${isFilterExpanded ? '' : 'contracted'}`}/>
+        <img src="/assets/down-arrow.svg" alt="" className={`down-arrow ${isFilterExpanded ? '' : 'contracted'}`}/>
       </header>
       <div className={`filters-container ${isFilterExpanded ? '' : 'contracted'}`}>
         {products
