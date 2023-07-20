@@ -1,10 +1,5 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import InputSearch from './components/InputSearch';
-import ProductsService from './services/ProductsService';
-import ProductCard from './components/ProductCard';
-
-import './App.css';
-import FilterColumn from './components/FilterColumn';
+import { useCallback, useEffect, useMemo, useState } from "react";
+import ProductsService from "../services/ProductsService";
 
 interface Product {
   id: string;
@@ -24,7 +19,8 @@ interface Product {
   };
 }
 
-function App() {
+export default function UseApp(){
+
   const [products, setProducts] = useState<Product[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -63,33 +59,13 @@ function App() {
 
   const productsNumber = filteredProducts.length;
 
-  return (
-    <main>
-      <h1>
-        O QUE VOCÊ <strong>ESTÁ PROCURANDO?</strong>
-      </h1>
-
-      <InputSearch value={searchTerm} onChange={handleChangeSearchTerm} />
-
-      <div className='products-component'>
-        <FilterColumn products={products} selectedCategories={selectedCategories} handleCategoryChange={handleCategoryChange}/>
-
-        <div className="products">
-          <div className="products-number">{`${productsNumber} resultados`}</div>
-          <div className="products-container">
-            {filteredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                name={product.name}
-                imageUrl={product.images[0].asset.url}
-                imageAlt={product.images[0].alt}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+  return{
+    searchTerm,
+    handleChangeSearchTerm,
+    products,
+    selectedCategories,
+    handleCategoryChange,
+    productsNumber,
+    filteredProducts
+  }
 }
-
-export default App;
