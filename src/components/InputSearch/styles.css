@@ -1,0 +1,37 @@
+.input-container{
+  position: relative;
+  display: inline-block;
+
+  margin: 32px 0 32px 0;
+}
+
+.input-search{
+  background: #fff;
+  padding-right: 25px;
+  height: 50px;
+  border-bottom: 1px solid #5998A3;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+  outline: 0;
+  padding: 0 16px;
+  width: 400px;
+
+}
+
+.input-search::placeholder{
+  color: #5998A3;
+}
+
+.input-image{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+@media (max-width: 768px) {
+  .input-container, .input-search{
+    width: 100%;
+  }
+}
